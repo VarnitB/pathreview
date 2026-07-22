@@ -18,4 +18,4 @@ I selected this issue because it has a clearly defined failure, a focused reprod
 
 **Setup confirmation:** [x] App runs locally at localhost:5173
 
-**Cohort ledger:** [ ] Issue added to cohort ledger
+**Cohort ledger:** [x] Issue added to cohort ledger
