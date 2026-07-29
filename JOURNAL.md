@@ -22,12 +22,12 @@ I selected this issue because it has a clearly defined failure, a focused reprod
 
 ## Week 8 — Reproduction & solution planning
 
-**Reproduction commit link:** [add after reproduction commit is pushed]
+**Reproduction commit link:** https://github.com/VarnitB/pathreview/commit/e5f52b775d3283ebdb6c5b63d62afca69342f883
 
 **Reproduction summary:**
 I reproduced issue #157 by running `pytest tests/unit/test_relevance_scorer.py -q`. The `test_query_with_partial_overlap` test failed because the scorer returned `1.0`, while the fixture expects a partial-overlap score below `0.9`; the focused test run produced 1 failure and 18 passing tests.
 
-**PLAN.md link:** [add after PLAN.md is pushed]
+**PLAN.md link:** https://github.com/VarnitB/pathreview/blob/test/157-partial-overlap-fixture/PLAN.md
 
 **Walkthrough video (recommended):** Not recorded
 
