@@ -19,3 +19,17 @@ I selected this issue because it has a clearly defined failure, a focused reprod
 **Setup confirmation:** [x] App runs locally at localhost:5173
 
 **Cohort ledger:** [x] Issue added to cohort ledger
+
+## Week 8 — Reproduction & solution planning
+
+**Reproduction commit link:** [add after reproduction commit is pushed]
+
+**Reproduction summary:**
+I reproduced issue #157 by running `pytest tests/unit/test_relevance_scorer.py -q`. The `test_query_with_partial_overlap` test failed because the scorer returned `1.0`, while the fixture expects a partial-overlap score below `0.9`; the focused test run produced 1 failure and 18 passing tests.
+
+**PLAN.md link:** [add after PLAN.md is pushed]
+
+**Walkthrough video (recommended):** Not recorded
+
+**Blockers or open questions:**
+None at this stage. The implementation fix will be completed in Week 9.
