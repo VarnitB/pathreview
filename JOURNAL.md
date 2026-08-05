@@ -33,3 +33,29 @@ I reproduced issue #157 by running `pytest tests/unit/test_relevance_scorer.py -
 
 **Blockers or open questions:**
 None at this stage. The implementation fix will be completed in Week 9.
+
+## Week 9 — Check-in 1
+
+**Issue:** #157 — Relevance scorer “partial overlap” test fixture actually has full query overlap
+
+**Implementation summary:**
+I updated only the chunk text in `test_query_with_partial_overlap` so it matches two of the
+query's four keywords (`django` and `web`). This produces a genuine partial-overlap score of
+`0.5`. The assertion and production relevance-scoring logic remain unchanged.
+
+**Baseline results:**
+
+- The issue test failed with a score of `1.0` before the fixture update.
+- `make check` reported 182 pre-existing Ruff errors, including 86 marked fixable.
+- `make test-unit` reported 53 failed, 375 passed, and 1 warning.
+
+**Post-change validation:**
+
+- Individual issue test: 1 passed.
+- Full `tests/unit/test_relevance_scorer.py`: 19 passed.
+- `make check`: the same 182 pre-existing Ruff errors remained.
+- `make test-unit`: 52 failed, 376 passed, and 1 warning. The issue #157 test now passes; the
+  remaining failures are pre-existing and unrelated. No new failures were introduced.
+
+**Blockers or open questions:**
+None. The change is implemented and validated locally but remains uncommitted and unpushed.
