@@ -67,3 +67,34 @@ I updated `tests/unit/test_relevance_scorer.py`, specifically `test_query_with_p
 Both commands still contain documented pre-existing unrelated failures, but this contribution introduced no new failures. `make test-unit` improved from 53 failures to 52 because issue #157 now passes.
 
 **Draft PR feedback received from:** none
+
+## Week 10 — Iteration & reflection
+
+### Reviewer feedback
+
+**Feedback received:** [ ] Yes  [x] No — still awaiting review
+
+**Summary of feedback:**
+No reviewer or maintainer feedback has been received on PR #901.
+
+**How you responded:**
+No code changes or reviewer responses were necessary.
+
+---
+
+### Reflection
+
+**What was harder than you expected?**
+Getting comfortable in a large and unfamiliar repository took more time than the actual fix. I had to figure out whether the scorer was broken or whether the test data was wrong, work around many unrelated test and Ruff failures without getting sidetracked, and learn the branch, fork, commit, and PR workflow along the way.
+
+**What did you learn about working in a large codebase?**
+Even a one-line change requires reading the surrounding code and tests first. I also learned not to fix unrelated problems just because I found them. Comparing results before and after the change made the impact clear and kept the PR focused and easy to review.
+
+**How did AI tools help — and where did they fall short?**
+AI helped me inspect files, understand the scoring behavior, and choose the right test commands. I still had to check its work for accuracy, scope, extra documentation, repository conventions, and claims that tests passed. Local setup and GitHub account issues also needed my own judgment.
+
+**What would you do differently if you started over?**
+I would read the contribution instructions earlier, record baseline failures before touching the code, and verify my Git author identity before committing. I would also open the draft PR earlier instead of waiting until close to the deadline.
+
+**What are you most proud of from this module?**
+I am proud that I recognized the production scorer was already working and fixed the real problem with one small fixture change instead of rewriting it. I also verified that the target test went from failing to passing without introducing any new failures. I am also proud to have further familiarized myself with open-source contributions.
