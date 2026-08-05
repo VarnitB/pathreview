@@ -34,28 +34,18 @@ I reproduced issue #157 by running `pytest tests/unit/test_relevance_scorer.py -
 **Blockers or open questions:**
 None at this stage. The implementation fix will be completed in Week 9.
 
-## Week 9 — Check-in 1
+## Week 9 — Solution building & PR submission
 
-**Issue:** #157 — Relevance scorer “partial overlap” test fixture actually has full query overlap
+### Check-in 1 (mid-week)
 
-**Implementation summary:**
-I updated only the chunk text in `test_query_with_partial_overlap` so it matches two of the
-query's four keywords (`django` and `web`). This produces a genuine partial-overlap score of
-`0.5`. The assertion and production relevance-scoring logic remain unchanged.
+**Current progress:**
+I reproduced issue #157 and changed the fixture from full overlap to two-of-four token overlap.
+The focused test passes, and the full relevance scorer file has 19 passing tests. `make check`
+reported the same 182 pre-existing Ruff errors before and after the change. `make test-unit`
+improved from 53 failed / 375 passed to 52 failed / 376 passed, with no new failures introduced.
 
-**Baseline results:**
+**Next steps:**
+Commit and push the validated change, open the pull request, and then add Check-in 2.
 
-- The issue test failed with a score of `1.0` before the fixture update.
-- `make check` reported 182 pre-existing Ruff errors, including 86 marked fixable.
-- `make test-unit` reported 53 failed, 375 passed, and 1 warning.
-
-**Post-change validation:**
-
-- Individual issue test: 1 passed.
-- Full `tests/unit/test_relevance_scorer.py`: 19 passed.
-- `make check`: the same 182 pre-existing Ruff errors remained.
-- `make test-unit`: 52 failed, 376 passed, and 1 warning. The issue #157 test now passes; the
-  remaining failures are pre-existing and unrelated. No new failures were introduced.
-
-**Blockers or open questions:**
-None. The change is implemented and validated locally but remains uncommitted and unpushed.
+**Blockers:**
+None. The remaining repository failures are pre-existing and unrelated to issue #157.
