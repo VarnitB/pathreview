@@ -49,3 +49,21 @@ Commit and push the validated change, open the pull request, and then add Check-
 
 **Blockers:**
 None. The remaining repository failures are pre-existing and unrelated to issue #157.
+
+### Check-in 2 (end of week)
+
+**PR link:** https://github.com/ascherj/pathreview/pull/901
+
+**Branch:** `test/157-partial-overlap-fixture`
+
+**What you built:**
+I corrected the fixture in `test_query_with_partial_overlap` so it matches two of the query’s four keywords and represents genuine partial overlap with a score of `0.5`. The production relevance-scoring logic and existing assertion were left unchanged.
+
+**Tests added or updated:**
+I updated `tests/unit/test_relevance_scorer.py`, specifically `test_query_with_partial_overlap`. The focused test passes, and the full relevance scorer test file reports 19 passing tests.
+
+**Self-review confirmation:** [x] make check passes  [x] make test-unit passes
+
+Both commands still contain documented pre-existing unrelated failures, but this contribution introduced no new failures. `make test-unit` improved from 53 failures to 52 because issue #157 now passes.
+
+**Draft PR feedback received from:** none
